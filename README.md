@@ -12,9 +12,9 @@
 
 ## Getting Started
 
-**/app** - main web app powered by next
-**/web** - static intro website using next-seo
-**/server** - bulletproof node backend
+- **/app** - main web app powered by next.
+- **/web** - static intro website, 98 seo score.
+- **/server** - bulletproof node backend.
 
 now grab the project and dependencies:
 
@@ -32,5 +32,4 @@ $ npm run dev
 
 ## Attributions
 
-Special thanks to [jkytoela](https://github.com/jkytoela/next-startd) for the next-startd base, which I heavily used
-for the static introduction page.
+- [Prudent](https://github.com/vickOnRails/prudent) was used for the static website, for maximum SEO.
