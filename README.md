@@ -1,4 +1,4 @@
-# Madyan
+# Madyan ⛰️
 A nifty SaaS style web app for rapid reusable iteration
 
 ## Breakdown
