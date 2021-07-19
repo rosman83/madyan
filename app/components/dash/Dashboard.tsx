@@ -81,8 +81,6 @@ export default function Dashboard() {
       overflowX="hidden"
       overflowY="auto"
       bg={useColorModeValue("white", "gray.800")}
-      borderTop="6px solid"
-      borderTopColor="#666db3"
       borderColor={useColorModeValue("inherit", "gray.700")}
       borderRightWidth="1px"
       w="60"
@@ -139,8 +137,6 @@ export default function Dashboard() {
       as="section"
       bg={useColorModeValue("gray.50", "gray.700")}
       minH="100vh"
-      borderTop="6px solid"
-      borderTopColor="#666db3"
     >
       <SidebarContent display={{ base: "none", md: "unset" }} />
       <Drawer
