@@ -17,7 +17,7 @@ import { Logo } from "./Logo";
 
 export const Login = () => (
   <Box
-    bg={useColorModeValue("gray.50", "inherit")}
+    bg={useColorModeValue("gray.800", "inherit")}
     minH="90vh"
     py="12"
     px={{ base: "4", lg: "8" }}
