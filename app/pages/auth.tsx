@@ -54,30 +54,37 @@ export default function Auth() {
             >
               Log In.
             </chakra.h1>
-            <chakra.form w="full">
-              <VStack>
-                <FormControl w="400px" id="email">
-                  <FormLabel>Email address</FormLabel>
-                  <Input type="email" />
-                </FormControl>
-                <FormControl w="400px" id="password">
-                  <FormLabel>Password</FormLabel>
-                  <Input type="password" />
-                </FormControl>
-                <ButtonGroup width="full" spacing={4}>
-                  <Button
-                    width="full"
-                    type="submit"
-                    colorScheme="blue"
-                    size="md"
-                    fontSize="md"
-                    mt="30px"
-                  >
-                    Sign in
-                  </Button>
-                </ButtonGroup>
-              </VStack>
-            </chakra.form>
+            <Box boxShadow="dark-lg" p="8" rounded="md" bg="white">
+              <chakra.form w="full">
+                <VStack>
+                  <FormControl w="400px" id="email">
+                    <FormLabel>Email address</FormLabel>
+                    <Input type="email" />
+                  </FormControl>
+                  <FormControl w="400px" id="password">
+                    <FormLabel>Password</FormLabel>
+                    <Input type="password" />
+                  </FormControl>
+                  <ButtonGroup width="full" spacing={4}>
+                    <Button
+                      width="full"
+                      type="submit"
+                      bgGradient="linear(to-l, #7928CA, #FF0080)"
+                      size="md"
+                      fontSize="md"
+                      mt="30px"
+                      color="white"
+                      _hover={{
+                        bgGradient: "linear(to-l, #7928CA, #FF0080)",
+                        boxShadow: "2xl",
+                      }}
+                    >
+                      Sign in
+                    </Button>
+                  </ButtonGroup>
+                </VStack>
+              </chakra.form>
+            </Box>
           </VStack>
         </Center>
       </Flex>
@@ -85,7 +92,7 @@ export default function Auth() {
         bgGradient="linear(to-l, #7928CA, #FF0080)"
         w="full"
         h={{ base: 0, md: "full" }}
-      />
+      ></Box>
     </SimpleGrid>
   );
 }

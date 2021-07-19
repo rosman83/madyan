@@ -1,7 +1,6 @@
 import {
   Avatar,
   Box,
-  Collapse,
   Drawer,
   DrawerContent,
   DrawerOverlay,
@@ -12,42 +11,35 @@ import {
   InputGroup,
   InputLeftElement,
   Text,
-  useColorMode,
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import { FaBell, FaClipboardCheck, FaRss, FaSun, FaMoon } from "react-icons/fa";
+import { FaBell, FaClipboardCheck, FaRss } from "react-icons/fa";
 import { AiFillGift } from "react-icons/ai";
 import { BsGearFill } from "react-icons/bs";
 import { FiMenu, FiSearch } from "react-icons/fi";
 import { HiCode, HiCollection } from "react-icons/hi";
-import { MdHome, MdKeyboardArrowRight } from "react-icons/md";
+import { MdHome } from "react-icons/md";
 import React from "react";
 import { Logo } from "@choc-ui/logo";
 
-export default function Dashboard() {
-  const { toggleColorMode: toggleMode } = useColorMode();
-  const text = useColorModeValue("dark", "light");
-  const SwitchIcon = useColorModeValue(FaMoon, FaSun);
-
-  const bg = useColorModeValue("white", "gray.800");
+export default function App() {
   const sidebar = useDisclosure();
-  const integrations = useDisclosure();
 
   const NavItem = (props) => {
     const { icon, children, ...rest } = props;
     return (
       <Flex
         align="center"
-        
         px="4"
-        pl="4"
+        mx="2"
+        rounded="md"
         py="3"
         cursor="pointer"
-        color={useColorModeValue("inherit", "gray.400")}
+        color="whiteAlpha.700"
         _hover={{
-          bg: useColorModeValue("gray.100", "gray.900"),
-          color: useColorModeValue("gray.900", "gray.200"),
+          bg: "blackAlpha.300",
+          color: "whiteAlpha.900",
         }}
         role="group"
         fontWeight="semibold"
@@ -59,7 +51,7 @@ export default function Dashboard() {
             mr="2"
             boxSize="4"
             _groupHover={{
-              color: useColorModeValue("gray.600", "gray.300"),
+              color: "gray.300",
             }}
             as={icon}
           />
@@ -80,21 +72,16 @@ export default function Dashboard() {
       pb="10"
       overflowX="hidden"
       overflowY="auto"
-      bg={useColorModeValue("white", "gray.800")}
-      borderColor={useColorModeValue("inherit", "gray.700")}
+      bg="brand.600"
+      borderColor="blackAlpha.300"
       borderRightWidth="1px"
       w="60"
       {...props}
     >
       <Flex px="4" py="5" align="center">
         <Logo />
-        <Text
-          fontSize="2xl"
-          ml="2"
-          color={useColorModeValue("brand.500", "white")}
-          fontWeight="semibold"
-        >
-          Madyan
+        <Text fontSize="2xl" ml="2" color="white" fontWeight="semibold">
+          Choc UI
         </Text>
       </Flex>
       <Flex
@@ -108,25 +95,7 @@ export default function Dashboard() {
         <NavItem icon={FaRss}>Articles</NavItem>
         <NavItem icon={HiCollection}>Collections</NavItem>
         <NavItem icon={FaClipboardCheck}>Checklists</NavItem>
-        <NavItem icon={HiCode} onClick={integrations.onToggle}>
-          Integrations
-          <Icon
-            as={MdKeyboardArrowRight}
-            ml="auto"
-            transform={integrations.isOpen && "rotate(90deg)"}
-          />
-        </NavItem>
-        <Collapse in={integrations.isOpen}>
-          <NavItem pl="12" py="2">
-            Shopify
-          </NavItem>
-          <NavItem pl="12" py="2">
-            Slack
-          </NavItem>
-          <NavItem pl="12" py="2">
-            Zapier
-          </NavItem>
-        </Collapse>
+        <NavItem icon={HiCode}>Integrations</NavItem>
         <NavItem icon={AiFillGift}>Changelog</NavItem>
         <NavItem icon={BsGearFill}>Settings</NavItem>
       </Flex>
@@ -158,7 +127,7 @@ export default function Dashboard() {
           px="4"
           bg={useColorModeValue("white", "gray.800")}
           borderBottomWidth="1px"
-          borderColor={useColorModeValue("inherit", "gray.700")}
+          borderColor="blackAlpha.300"
           h="14"
         >
           <IconButton
@@ -174,14 +143,6 @@ export default function Dashboard() {
           </InputGroup>
 
           <Flex align="center">
-            <IconButton
-              aria-label={`Switch to ${text} mode`}
-              variant="ghost"
-              color="gray.500"
-              ml={{ base: "0", md: "3" }}
-              onClick={toggleMode}
-              icon={<SwitchIcon />}
-            />
             <Icon color="gray.500" as={FaBell} cursor="pointer" />
             <Avatar
               ml="4"
